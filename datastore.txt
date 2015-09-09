@@ -1,3 +1,1 @@
 {"type":"User","id":1,"name":"John Wu","position":"Software Engineer","_id":"UUTpdPICsQSLS5zp"}
-{"type":"Project","id":1,"user_id":1,"name":"Midway","_id":"iOf7AuG7FKgoCUGl"}
-{"type":"Project","id":2,"user_id":1,"name":"InterU","_id":"98oHtzLcgVu3q2jy"}
