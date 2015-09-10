@@ -20,7 +20,7 @@ var middlewares = {
   },
 
   responseUserWithProjects: function (req, res, next) {
-    Promise.all([
+    return Promise.all([
       req.user,
       req.projects
     ]).then(function (results) {
