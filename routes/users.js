@@ -9,6 +9,7 @@ var middlewares = {
     var userPromise = User.getUserById(userId);
     req.user = userPromise;
     next();
+    return req.user;
   },
 
   getProjectsForUser: function (req, res, next) {
@@ -17,6 +18,7 @@ var middlewares = {
     }, next);
     req.projects = projectsPromise;
     next();
+    return req.projects;
   },
 
   responseUserWithProjects: function (req, res, next) {

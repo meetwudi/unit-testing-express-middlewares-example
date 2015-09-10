@@ -9,13 +9,13 @@ describe('Users endpoint', function () {
         params: { id: 1 }
       });
       var response = mocksHttp.createResponse();
-      usersMiddlewares.getUserById(request, response, function (err) {
-        if (err) done(err);
-        request.user.then(function (user) {
+      // 传入空的next函数
+      usersMiddlewares.getUserById(request, response, function () {})
+        .then(function (user) {
           user.should.have.properties(['id', 'name', 'position']);
           done();
         }, done);
-      });
+      // 更加清晰！
     })
   });
 
