@@ -10,10 +10,11 @@ describe('Users endpoint', function () {
       });
       var response = mocksHttp.createResponse();
       usersMiddlewares.getUserById(request, response, function (err) {
-        if (err) done (err);
-        should.exist(request.user);
-        request.user.should.have.properties(['id', 'name', 'position']);
-        done();
+        if (err) done(err);
+        request.user.then(function (user) {
+          user.should.have.properties(['id', 'name', 'position']);
+          done();
+        }, done);
       });
     })
   });
